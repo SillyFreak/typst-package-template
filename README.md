@@ -34,6 +34,8 @@ To add this package to your project, use this:
 #id[Hello World]
 ```
 
+![Example](./thumbnail.png)
+
 ## Usage
 
 See the [manual](docs/manual.pdf) for details.
