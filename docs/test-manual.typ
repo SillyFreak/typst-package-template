@@ -1,6 +1,8 @@
 #import "template.typ" as template: *
 #import "/src/lib.typ" as PACKAGE
 
+#let greet(name) = [Hello #name]
+
 #show: manual(
   package-meta: toml("/typst.toml").package,
   // date: none,
@@ -11,18 +13,16 @@
   abstract: [
     A PACKAGE for something #lorem(80)
   ],
-)
 
-// the scope for evaluating expressions and documentation
-#let greet(name) = [Hello #name]
-#let scope = (PACKAGE: PACKAGE, greet: greet)
+  scope: (PACKAGE: PACKAGE, greet: greet),
+)
 
 = Introduction
 
 This is a PACKAGE for something, providing #ref-fn("greet()").
 #context text.size
 
-```typ
+```example
 = Heading
 
 #greet[World]
@@ -68,5 +68,4 @@ This is a PACKAGE for something, providing #ref-fn("greet()").
   ````.text,
   name: "PACKAGE",
   label-prefix: none,
-  scope: scope,
 )
