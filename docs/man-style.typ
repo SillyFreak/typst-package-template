@@ -153,6 +153,7 @@
     stroke: (left: bar-width + name-fill),
     outset: (left: -bar-width / 2),
     inset: (x: 0.7em, y: 0.7em),
+    sticky: true,
     ..args
   )
 }
